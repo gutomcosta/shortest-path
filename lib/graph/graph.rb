@@ -15,8 +15,8 @@ module Shortest
     
     end
   
-    def vertex(to, from)
-      Vertex.new(to,from,3)
+    def arc(to, from)
+      Arc.new(to,from,3)
     end
   end
 end

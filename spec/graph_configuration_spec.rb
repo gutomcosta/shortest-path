@@ -23,8 +23,11 @@ describe "Graph configuration" do
       GraphConfiguration.distance.from("tocantins").to("rio pomba").is(1)
       GraphConfiguration.distance.from("rio pomba").to("juiz de fora").is(2)
 
-      vertex = GraphConfiguration.graph.vertex("uba", "tocantins")
-      vertex.distance.should == 3
+      graph = GraphConfiguration.graph
+      arc = graph.arc("uba", "tocantins")
+      arc.from.should == "uba"
+      arc.to.should == "tocantins"
+      arc.distance.should == 3
     
     end
   end

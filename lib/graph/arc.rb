@@ -1,10 +1,10 @@
 module Shortest
 
-  class Vertex
+  class Arc
     
     attr_reader :to, :from, :distance
     
-    def initialize(to, from, distance)
+    def initialize(from, to, distance)
       @to = to
       @from = from
       @distance = distance

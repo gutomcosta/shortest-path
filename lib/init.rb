@@ -1,7 +1,7 @@
 require "rubygems"
 require "bundler"
 require "graph/node"           
-require "graph/vertex"           
+require "graph/arc"           
 require "graph/graph"           
 
 require 'graph'
