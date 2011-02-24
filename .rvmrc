@@ -1,0 +1,4 @@
+# volta pro Ruby default caso o usuário saia do diretório
+rvm_project_rvmrc_default=1
+
+rvm ruby-1.9.2-p0@shortest

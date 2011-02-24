@@ -1,2 +1,2 @@
 require 'rspec'
-require '/home/luiz/projetos/shortest-path/lib/init'
+require "#{File.expand_path("../../lib/init",__FILE__)}"
