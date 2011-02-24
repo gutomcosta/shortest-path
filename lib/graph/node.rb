@@ -1,4 +1,4 @@
-module Graph
+module Shortest
 
   class Node
     def initialize(name)
