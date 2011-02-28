@@ -1,8 +1,9 @@
 
 class GraphConfiguration
 
-  def self.distance
-    @graph = Shortest::Graph.new
+  def self.distance(hash)
+    @graph = Shortest::Graph.new unless @graph
+    @graph.add_arc hash[:from], hash[:to], hash[:is]
   end
   
   def self.graph
@@ -10,4 +11,7 @@ class GraphConfiguration
   end
 
 end
+
+
+
   

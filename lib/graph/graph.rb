@@ -1,18 +1,14 @@
 module Shortest
+
   class Graph
-  
-    def from(node)
-    
-      self
+
+    def initialize
+      @arcs =  Array.new
     end
-  
-    def to(node)
-    
-      self
-    end
-  
-    def is(distance)
-    
+
+    def add_arc(from,to, distance)
+      arc = Arc.new( from, to, distance )
+      @arcs.push(arc)
     end
   
     def arc(to, from)
