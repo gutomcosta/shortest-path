@@ -34,11 +34,30 @@ describe "Graph configuration" do
       GraphConfiguration.distance :from => 'rio pomba', :to => "juiz de fora", :is => 2
 
       graph = GraphConfiguration.graph
-      arc = graph.arc("uba", "tocantins")
-      arc.from.should == "uba"
-      arc.to.should == "tocantins"
-      arc.distance.should == 3
-    
+      edge = graph.edge "uba", "tocantins"
+      edge.from.should == "uba"
+      edge.to.should == "tocantins"
+      edge.distance.should == 3
     end
+    
+    it "should return a shortest path between uba and juiz de fora" do
+      
+      GraphConfiguration.distance :from => 'uba', :to => "tocantins", :is => 3
+      GraphConfiguration.distance :from => 'tocantins', :to => "rio pomba", :is => 1
+      GraphConfiguration.distance :from => 'rio pomba', :to => "juiz de fora", :is => 2
+      GraphConfiguration.distance :from => 'uba', :to => "rodeiro", :is => 2
+      GraphConfiguration.distance :from => 'rodeiro', :to => "rio pomba", :is => 4
+      GraphConfiguration.distance :from => 'rodeiro', :to => "muriae", :is => 2
+      GraphConfiguration.distance :from => 'muriae', :to => "juiz de fora", :is => 3
+      
+      graph = GraphConfiguration.graph
+      path = graph.shortest_path :from => 'uba', :to => 'juiz de fora'
+      path.total_nodes_in_path.should == 4
+      path.include_node?("uba").should be_true
+      path.include_node?("tocantins").should  be_true
+      path.include_node?("rio pomba").should be_true
+      path.include_node?("juiz de fora").should be_true
+    end
+    
   end
 end

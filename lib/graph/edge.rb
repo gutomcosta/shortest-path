@@ -1,6 +1,6 @@
 module Shortest
 
-  class Arc
+  class Edge
     
     attr_reader :to, :from, :distance
     
