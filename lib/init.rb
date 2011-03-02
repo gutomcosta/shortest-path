@@ -3,6 +3,7 @@ require "bundler"
 require "graph/node"           
 require "graph/edge"           
 require "graph/graph"           
-require "graph/path"           
+require "graph/path"
+require "graph/possible_paths" 
 
 require 'graph'

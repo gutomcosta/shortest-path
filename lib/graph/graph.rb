@@ -31,14 +31,13 @@ module Shortest
       @edges.select {|edge| (edge.from == from and edge.to == to)}.first
     end
     
-    def shortest_path(hash)      
-      path = Path.new
-      path.start_node Node.new("uba")
-      path.through Node.new("tocantins")
-      path.through Node.new("rio pomba")
-      path.end_node Node.new("juiz de fora")
-      path
+    def shortest_path(hash)
+      from = self.vertice( hash[:from] )
+      to   = self.vertice( hash[:to] )
+      possible_paths = from.possible_paths to
+      path = possible_paths.shortest_path
+      
+
     end
-    
   end
 end
